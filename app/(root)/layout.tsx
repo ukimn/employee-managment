@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google"; // Only import what you need
-import "./globals.css";
+import "../globals.css"
 import Header from "@/components/header";
 
 // Only initialize Geist Mono
