@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {Geist_Mono} from "next/font/google";
 import "./globals.css";
-import {NuqsAdapter} from "nuqs/adapters/react";
+import { NuqsAdapter } from "nuqs/adapters/react";
 import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  weight: "variable"
 });
 
 export const metadata: Metadata = {
@@ -25,12 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NuqsAdapter>{children}</NuqsAdapter>
-        <Toaster/>
+    <html lang="en" className={`${geistMono.variable}`}>
+      <body className="min-h-screen antialiased">
+        <NuqsAdapter>
+          {children}
+        </NuqsAdapter>
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );
