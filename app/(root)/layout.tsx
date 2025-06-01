@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist_Mono as GeistMono } from "next/font/google";
+import { Geist, Geist_Mono } from 'next/font/google';
 import Header from "@/components/header";
 
 
-const geistMono = GeistMono({
+const geistMono = Geist({
   subsets: ["latin"],
   display: 'swap',
   variable: "--font-geist-mono", 
